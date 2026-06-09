@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KM System Demo - Mappar vs Taggar (Visuell Demo)</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <div class="app-container">
+        <header class="header">
+        <h1>Arkitektur för uppgiftshantering: Moment vs. Taggar</h1>
+        <p>Prototyp och diskussionsunderlag för strukturering av innehåll i relation till Gy25.</p>
+    </header>
+
+    <div class="container">
+        <!-- Vänster/Topp: Kontroller -->
+        <div class="view-toggle">
+            <button id="btn-folder-view" class="toggle-btn active">
+                1. Diskret Struktur (umom)
+            </button>
+            <button id="btn-tag-view" class="toggle-btn">
+                2. Platt Struktur (Tagg-system)
+            </button>
+        </div>
+
+        <main class="main-content glass-panel">
+            <div id="view-description" class="view-description">
+                <!-- Text uppdateras via JS -->
+            </div>
+
+            <!-- Sub-meny för umom/vmom (visas bara i läge 1) -->
+            <div id="vmom-controls" class="nav-container">
+                <span class="tag-label">Konsekvens av virtuella moment:</span>
+                <button id="btn-create-vmom" class="tag-btn">Initiera vmom (Celler + Genetik)</button>
+            </div>
+
+            <!-- Menyn för taggar (visas bara i läge 2) -->
+            <div id="tag-controls" class="nav-container hidden">
+                <div class="tag-row">
+                    <span class="tag-label">Dynamiska teman:</span>
+                    <div id="tag-buttons-container"></div>
+                </div>
+                <div class="tag-row" style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed rgba(255,255,255,0.2);">
+                    <span class="tag-label" style="color: var(--accent-3);">Progression enligt Gy25:</span>
+                    <button id="btn-gy25" class="tag-btn" style="border-color: var(--accent-3);">Visualisera nivåindelning (Nivå 1 & Nivå 2)</button>
+                </div>
+            </div>
+            
+            <!-- Arbetsytan där "plupparna" rör sig -->
+            <div class="canvas-wrapper">
+                <div id="canvas" class="canvas">
+                    <!-- Fysiska boxar och pluppar injiceras här -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
