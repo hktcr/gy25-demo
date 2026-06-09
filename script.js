@@ -29,19 +29,19 @@ let selectedTag = null;
 let isVmomActive = false;
 let isGy25Active = false;
 
-// Skapa Box-element (UI-bakgrunder)
-const boxes = {
-    Celler: createBox('Celler'),
-    Kretslopp: createBox('Kretslopp'),
-    Människokroppen: createBox('Kroppen'),
-    Genetik: createBox('Genetik'),
-    Ekologi: createBox('Ekologi'),
-    Vmom: createBox('vmom: Celler & Genetik'), 
-    Pool: createBox('Hela Uppgiftsbanken (Osorterad Pool)'),
-    Active: createBox('Valt Tema (Dynamiskt Innehållspaket)'),
-    Niva1: createBox('Nivå 1 (Gy25)'),
-    Niva2: createBox('Nivå 2 (Gy25)')
-};
+    // Skapa Box-element (UI-bakgrunder)
+    const boxes = {
+        Celler: createBox('Celler'),
+        Kretslopp: createBox('Kretslopp'),
+        Människokroppen: createBox('Kroppen'),
+        Genetik: createBox('Genetik'),
+        Ekologi: createBox('Ekologi'),
+        Vmom: createBox('vmom: celler & genetik'), 
+        Pool: createBox('Hela uppgiftsbanken (osorterad pool)'),
+        Active: createBox('Valt tema (dynamiskt innehållspaket)'),
+        Niva1: createBox('Nivå 1 (Gy25)'),
+        Niva2: createBox('Nivå 2 (Gy25)')
+    };
 
 function createBox(title) {
     const el = document.createElement('div');
@@ -185,9 +185,9 @@ function updateLayout() {
         tagControls.classList.remove('hidden');
         
         if (isGy25Active) {
-            viewDesc.innerHTML = `<strong>Ämnesbetyg och progression (Gy25):</strong> Uppgifter tilldelas multipla attribut (t.ex. Nivå 1 och Nivå 2). Uppgifter i gränssnittet mellan nivåerna (mittlinjen) återanvänds systematiskt utan redundans.`;
+            viewDesc.innerHTML = `<strong>Ämnesbetyg och progression (Gy25):</strong> Uppgifter tilldelas multipla attribut (t.ex. nivå 1 och nivå 2). Uppgifter i gränssnittet mellan nivåerna (mittlinjen) återanvänds systematiskt utan redundans.`;
         } else {
-            viewDesc.innerHTML = `<strong>Platt databasstruktur (Taggar):</strong> Uppgiftsbanken fungerar som en platt pool. Vid filtrering via taggar samlas relevant material temporärt, utan att låsa uppgifterna.`;
+            viewDesc.innerHTML = `<strong>Platt databasstruktur (taggar):</strong> Uppgiftsbanken fungerar som en platt pool. Vid filtrering via taggar samlas relevant material temporärt, utan att låsa uppgifterna.`;
         }
     }
 
